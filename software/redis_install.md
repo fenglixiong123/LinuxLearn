@@ -36,7 +36,10 @@ make install prefix=/usr/local/redis
 移动配置文件:
  
 mv /opt/software/redis-5.0.3/redis.conf /usr/local/etc   
-注意：要使用后台启动，所以修改redis.conf里的daemonize改为yes
+
+注意：  
+如果要后台启动：daemonize yes  
+如果要设置密码：requirepass welcome
 
 启动：  
 /usr/local/bin/redis-server /usr/local/etc/redis.conf
@@ -49,6 +52,8 @@ ps -ef|grep redis
 
 cd /usr/local/bin/
 ./redis-cli
+
+注意：如果设置了密码，需要先输入：auth password
 
 ## 9.退出redis服务
 
